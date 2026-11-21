@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitSphere | Fitness Center Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FitSphere</span></a>
+    <p class="menu-label">WORKSPACE</p>
+    <nav>
+      <button class="nav-link active" data-page="dashboard"><span>▦</span> Dashboard</button>
+      <button class="nav-link" data-page="members"><span>♙</span> Members</button>
+      <button class="nav-link" data-page="trainers"><span>♟</span> Trainers</button>
+      <button class="nav-link" data-page="classes"><span>▤</span> Class schedule</button>
+      <button class="nav-link" data-page="programs"><span>◈</span> Workout programs</button>
+      <button class="nav-link" data-page="attendance"><span>✓</span> Attendance</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="help-card"><strong>Need a hand?</strong><p>Manage your fitness center with ease.</p><a href="mailto:support@fitsphere.example">Contact support ↗</a></div>
+      <div class="user-mini"><div class="avatar">AD</div><div><strong>Admin User</strong><small>Administrator</small></div><span class="dots">•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+      <div class="breadcrumb">Workspace <span>/</span> <strong id="crumb">Dashboard</strong></div>
+      <div class="top-actions"><span class="today" id="today"></span><button class="icon-btn" aria-label="Notifications">♧<i></i></button><div class="avatar small">AD</div></div>
+    </header>
+
+    <section class="page-heading">
+      <div><p class="eyebrow">FITNESS CENTER OVERVIEW</p><h1 id="pageTitle">Good morning, Admin <span>✦</span></h1><p class="subheading" id="pageSubtitle">Here's what's happening at your fitness center today.</p></div>
+      <button class="primary-btn" id="addButton">＋ Add member</button>
+    </section>
+
+    <section id="dashboardPage" class="page-content">
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Total members</span><span class="stat-icon purple">♙</span></div><strong id="memberCount">1,248</strong><small><b class="positive">↑ 12.8%</b> vs last month</small><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Active trainers</span><span class="stat-icon orange">♟</span></div><strong>24</strong><small><b class="positive">↑ 2</b> new this month</small><div class="mini-bars orange-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Classes today</span><span class="stat-icon blue">▤</span></div><strong>08</strong><small><b>6 upcoming</b> sessions</small><div class="mini-bars blue-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span>Attendance rate</span><span class="stat-icon green">✓</span></div><strong>86.4%</strong><small><b class="positive">↑ 4.3%</b> vs last week</small><div class="mini-bars green-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel attendance-panel">
+          <div class="panel-heading"><div><h2>Attendance overview</h2><p>Member check-ins over the week</p></div><select id="periodSelect"><option>This week</option><option>Last week</option><option>This month</option></select></div>
+          <div class="chart-legend"><span><i class="legend-dot"></i> Check-ins</span><span class="muted">Weekly activity</span></div>
+          <div class="chart" aria-label="Weekly attendance chart">
+            <div class="y-labels"><span>300</span><span>200</span><span>100</span><span>0</span></div>
+            <div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i></div><div class="bars" id="chartBars"><div style="height:48%"><b>Mon</b></div><div style="height:68%"><b>Tue</b></div><div style="height:57%"><b>Wed</b></div><div style="height:88%"><b>Thu</b></div><div style="height:73%"><b>Fri</b></div><div style="height:96%"><b>Sat</b></div><div style="height:38%"><b>Sun</b></div></div></div>
+          </div>
+        </article>
+        <article class="panel schedule-panel">
+          <div class="panel-heading"><div><h2>Today's classes</h2><p>Your upcoming sessions</p></div><button class="text-btn" data-go="classes">View all →</button></div>
+          <div class="schedule-list">
+            <div class="schedule-item"><div class="time">07:00<small>AM</small></div><div class="class-color violet"></div><div class="class-info"><strong>Morning Yoga</strong><small>Priya Sharma · Studio A</small></div><span class="spots">18/20</span></div>
+            <div class="schedule-item"><div class="time">09:30<small>AM</small></div><div class="class-color peach"></div><div class="class-info"><strong>Strength Training</strong><small>Arjun Mehta · Gym Floor</small></div><span class="spots">12/15</span></div>
+            <div class="schedule-item"><div class="time">05:00<small>PM</small></div><div class="class-color blue-line"></div><div class="class-info"><strong>HIIT Workout</strong><small>Riya Kapoor · Studio B</small></div><span class="spots">16/20</span></div>
+            <div class="schedule-item"><div class="time">06:30<small>PM</small></div><div class="class-color green-line"></div><div class="class-info"><strong>Zumba</strong><small>Neha Singh · Studio A</small></div><span class="spots">22/25</span></div>
+          </div>
+        </article>
+      </div>
+
+      <article class="panel members-panel">
+        <div class="panel-heading"><div><h2>Recent members</h2><p>Latest people to join your fitness community</p></div><button class="text-btn" data-go="members">View all members →</button></div>
+        <div class="table-wrap"><table><thead><tr><th>MEMBER</th><th>MEMBERSHIP</th><th>JOINED DATE</th><th>STATUS</th></tr></thead><tbody id="recentMembers">
+          <tr><td><div class="person"><span class="person-avatar pink">AK</span><span><strong>Aditya Kumar</strong><small>aditya.k@email.com</small></span></div></td><td>Premium</td><td>21 Nov, 2026</td><td><span class="status active-status">Active</span></td></tr>
+          <tr><td><div class="person"><span class="person-avatar yellow">SM</span><span><strong>Simran Malhotra</strong><small>simran.m@email.com</small></span></div></td><td>Standard</td><td>20 Nov, 2026</td><td><span class="status active-status">Active</span></td></tr>
+          <tr><td><div class="person"><span class="person-avatar blue-bg">RV</span><span><strong>Rahul Verma</strong><small>rahul.v@email.com</small></span></div></td><td>Basic</td><td>19 Nov, 2026</td><td><span class="status pending-status">Pending</span></td></tr>
+        </tbody></table></div>
+      </article>
+    </section>
+
+    <section id="genericPage" class="page-content hidden">
+      <article class="panel generic-panel"><div class="panel-heading"><div><h2 id="genericTitle">Members</h2><p id="genericDescription">Manage your fitness center information.</p></div><input class="search-input" id="searchInput" placeholder="Search..." /></div><div id="genericBody"></div></article>
+    </section>
+  </main>
+
+  <dialog id="memberDialog">
+    <form method="dialog" id="memberForm">
+      <div class="dialog-head"><div><p class="eyebrow">MEMBER MANAGEMENT</p><h2>Add a new member</h2></div><button class="close-btn" value="cancel" aria-label="Close">×</button></div>
+      <label>Full name<input id="newName" required placeholder="Enter member name"></label>
+      <label>Email address<input id="newEmail" type="email" required placeholder="name@example.com"></label>
+      <label>Membership plan<select id="newPlan"><option>Premium</option><option>Standard</option><option>Basic</option></select></label>
+      <button class="primary-btn full-btn" type="submit">Add member</button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
